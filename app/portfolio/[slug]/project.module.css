@@ -1,0 +1,183 @@
+.container {
+    padding-top: 2rem;
+    padding-bottom: 6rem;
+    position: relative;
+    z-index: 10;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #9CA3AF;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.backLink:hover {
+    color: white;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: flex-start;
+}
+
+.titleBlock {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.category {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+}
+
+.metaGrid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem 2rem;
+    font-size: 0.875rem;
+    color: var(--text-gray);
+    justify-content: end;
+}
+
+.metaLabel {
+    color: var(--text-gray);
+}
+
+.metaValue {
+    color: var(--foreground);
+}
+
+.heroImage {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    margin-bottom: 6rem;
+    display: block;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.galleryImage {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+}
+
+.storySection {
+    margin-bottom: 6rem;
+}
+
+.storyTitle {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gridTwoColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+}
+
+.sectionTitle {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    margin-bottom: 1rem;
+}
+
+.text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+.fullWidthText {
+    max-width: 800px;
+}
+
+.footerNav {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+    padding-top: 2rem;
+    margin-top: 6rem;
+    position: relative;
+    z-index: 50;
+}
+
+.navLink {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    color: var(--text-gray);
+    transition: color 0.2s;
+}
+
+.navLink:hover {
+    color: var(--foreground);
+}
+
+.navLabel {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.navProject {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+/* Mobile - Don't forget to check for responsiveness */
+@media (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr;
+        /* Stack title and meta */
+    }
+
+    .metaGrid {
+        justify-content: start;
+        /* Align left on mobile */
+    }
+
+    .gridTwoColumns {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

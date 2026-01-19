@@ -68,7 +68,7 @@ const projects: Record<string, ProjectData> = {
     team: "Fahri Can Genç, Bianka Hadnagy, Cedya Elif Ekiz",
     link: "https://i556437.hera.fontysict.net/belco/index.html",
     heroImage: "/project-belco-hero.jpg",
-    middleImages: ["/project-belco-1.jpg", "/project-belco-2.jpg"], 
+    middleImages: ["/project-belco-1.jpg", "/project-belco-2.jpg"],
     bottomImages: ["/project-belco-3.jpg", "/project-belco-4.jpg"],
     overview:
       "This project was about redesigning the BELCO website, a platform aimed at university students, similar to Erasmus. The client asked for a modern, functional, and user-friendly website that improves the overall student experience.",
@@ -104,15 +104,16 @@ const projects: Record<string, ProjectData> = {
     year: "2026",
     role: "UI/UX Designer & Developer",
     team: "Fahri Can Genç, Jaycey B., Joël V., Louis G., Melanie v.d. G. & Sefa Y.",
+    link: "https://github.com/tenchi-of-darkness/node-flipdots-tetris",
     heroImage: "/project-owow-hero.jpg",
-    middleImages: ["/project-owow-1.jpg", "/project-owow-2.jpg"], 
+    middleImages: ["/project-owow-1.jpg", "/project-owow-2.jpg"],
     bottomImages: ["/project-owow-3.jpg", "/project-owow-4.jpg"],
     overview:
-      "-",
+      "OWOW was an industry project in collaboration with a real client, where our team designed and developed a playable Tetris game for a physical flipdot display. The project focused on translating a well-known game concept into a highly constrained medium, working with limited resolution, black-and-white output, and hardware-specific interaction. My main focus was on user interaction, usability, research, and translating insights into concrete design and implementation decisions.",
     challenge:
-      "-",
+      "The main challenge was designing an intuitive and enjoyable Tetris experience within the technical and physical limitations of a flipdot board. Classic Tetris relies heavily on smooth visuals and fast feedback, which are not directly possible on this hardware. Additionally, player expectations were high due to familiarity with Tetris, meaning that unclear controls, feedback, or onboarding would quickly lead to confusion or frustration.",
     solution:
-      "-",
+      "I approached this challenge by researching classic Tetris interaction rules, player expectations, and feedback principles, and applying a Double Diamond design process. Through iterative design, usability testing, and experimentation, I worked on improving the start screen, pause menu, and overall interaction clarity. User test insights directly informed design changes, such as clearer feedback and improved menu behaviour. Although not all concepts made it to the final version, the process demonstrates a research-driven and iterative approach to designing within strict constraints.",
   },
 
   "quiz-craft": {
@@ -127,12 +128,12 @@ const projects: Record<string, ProjectData> = {
     middleImages: ["/project-quizcraft-1.jpg", "/project-quizcraft-2.jpg"],
     bottomImages: ["/project-quizcraft-3.jpg", "/project-quizcraft-4.jpg"],
     overview:
-    "Quiz Craft is a web-based trivia game built with Next.js and Supabase, designed for teenagers and young adults who enjoy fast-paced, competitive gameplay. Players select a category, enter a username, and complete a timed quiz where scores are calculated based on both speed and accuracy. The project focuses on replayability, clear feedback, and a modern, minimal UI that keeps players engaged without overwhelming them.",
+      "Quiz Craft is a web-based trivia game built with Next.js and Supabase, designed for teenagers and young adults who enjoy fast-paced, competitive gameplay. Players select a category, enter a username, and complete a timed quiz where scores are calculated based on both speed and accuracy. The project focuses on replayability, clear feedback, and a modern, minimal UI that keeps players engaged without overwhelming them.",
     challenge:
-    "One of the main challenges was balancing speed-based gameplay with accessibility and focus. Designing a game that feels competitive without becoming stressful required careful decisions around timing, feedback, and visual hierarchy. On a technical level, managing time-based logic, handling edge cases when timers expired, and integrating Supabase with Next.js client components added complexity to the development process.",
+      "One of the main challenges was balancing speed-based gameplay with accessibility and focus. Designing a game that feels competitive without becoming stressful required careful decisions around timing, feedback, and visual hierarchy. On a technical level, managing time-based logic, handling edge cases when timers expired, and integrating Supabase with Next.js client components added complexity to the development process.",
     solution:
-    "I approached the project iteratively, starting with rough ideas and quickly moving into prototyping and development. The interface was kept clean and minimal, with the timer and score always visible and immediate feedback shown after each answer. I implemented an asynchronous multiplayer system using shared quiz links and category-based leaderboards, allowing players to compete without real-time synchronization. Using Supabase for data persistence and Next.js for dynamic routing resulted in a scalable foundation that can easily support future features like daily challenges or fixed multiplayer sessions.",
-},
+      "I approached the project iteratively, starting with rough ideas and quickly moving into prototyping and development. The interface was kept clean and minimal, with the timer and score always visible and immediate feedback shown after each answer. I implemented an asynchronous multiplayer system using shared quiz links and category-based leaderboards, allowing players to compete without real-time synchronization. Using Supabase for data persistence and Next.js for dynamic routing resulted in a scalable foundation that can easily support future features like daily challenges or fixed multiplayer sessions.",
+  },
 
   gorillabot: {
     slug: "gorillabot",
@@ -178,128 +179,128 @@ export default async function ProjectPage({
   const nav = getNavLinks(slug);
 
   return (
-  <div className={styles.container}>
-    <header className={styles.header}>
-      <div className={styles.titleBlock}>
-        <h1 className={styles.title}>{project.title}</h1>
-        <span className={styles.category}>{project.category}</span>
-      </div>
-
-      <div className={styles.metaGrid}>
-        <div className={styles.metaRow}>
-          <span className={styles.metaLabel}>Year:</span>
-          <span className={styles.metaValue}>{project.year}</span>
+    <div className={styles.container}>
+      <header className={styles.header}>
+        <div className={styles.titleBlock}>
+          <h1 className={styles.title}>{project.title}</h1>
+          <span className={styles.category}>{project.category}</span>
         </div>
-        <div className={styles.metaRow}>
-          <span className={styles.metaLabel}>Role:</span>
-          <span className={styles.metaValue}>{project.role}</span>
-        </div>
-        <div className={styles.metaRow}>
-          <span className={styles.metaLabel}>Team:</span>
-          <span className={styles.metaValue}>{project.team}</span>
-        </div>
-      </div>
-      {project.link && (
-    <div className={styles.metaRow}>
-      <span className={styles.metaLabel}>Link:</span>
-      <a 
-        href={project.link} 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        className={styles.metaValue}
-        style={{ textDecoration: 'underline', cursor: 'pointer' }}
-      >
-        Visit Project
-      </a>
-    </div>
-  )}
-    </header>
 
-    <div className={styles.heroWrapper}>
-      {project.heroImage && (
-        <Image
-          src={project.heroImage}
-          alt={project.title}
-          fill
-          className={styles.imageObject}
-        />
-      )}
-    </div>
-
-    {project.middleImages && project.middleImages.length > 0 && (
-      <section className={styles.middleGallery}>
-        {project.middleImages.map((img, i) => (
-          <div key={i} className={styles.galleryItemWrapper}>
-            <Image
-              src={img}
-              alt={`Detail ${i}`}
-              fill
-              className={styles.imageObject}
-            />
+        <div className={styles.metaGrid}>
+          <div className={styles.metaRow}>
+            <span className={styles.metaLabel}>Year:</span>
+            <span className={styles.metaValue}>{project.year}</span>
           </div>
-        ))}
-      </section>
-    )}
-
-    <section className={styles.storySection}>
-      <h2 className={styles.storyTitle}>Explore the Full Story</h2>
-      <div className={styles.gridTwoColumns}>
-        <div>
-          <h3 className={styles.sectionTitle}>Overview</h3>
-          <p className={styles.text}>{project.overview}</p>
-        </div>
-        <div>
-          <h3 className={styles.sectionTitle}>The Challenge</h3>
-          <p className={styles.text}>{project.challenge}</p>
-        </div>
-      </div>
-      <div className={styles.fullWidthText}>
-        <h3 className={styles.sectionTitle}>Solution</h3>
-        <p className={styles.text}>{project.solution}</p>
-      </div>
-    </section>
-
-    {project.bottomImages && project.bottomImages.length > 0 && (
-      <section className={styles.bottomGallery}>
-        {project.bottomImages.map((img, i) => (
-          <div key={i} className={styles.galleryItemWrapper}>
-            <Image
-              src={img}
-              alt={`Gallery ${i}`}
-              fill
-              className={styles.imageObject}
-            />
+          <div className={styles.metaRow}>
+            <span className={styles.metaLabel}>Role:</span>
+            <span className={styles.metaValue}>{project.role}</span>
           </div>
-        ))}
+          <div className={styles.metaRow}>
+            <span className={styles.metaLabel}>Team:</span>
+            <span className={styles.metaValue}>{project.team}</span>
+          </div>
+        </div>
+        {project.link && (
+          <div className={styles.metaRow}>
+            <span className={styles.metaLabel}>Link:</span>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.metaValue}
+              style={{ textDecoration: "underline", cursor: "pointer" }}
+            >
+              Visit Project
+            </a>
+          </div>
+        )}
+      </header>
+
+      <div className={styles.heroWrapper}>
+        {project.heroImage && (
+          <Image
+            src={project.heroImage}
+            alt={project.title}
+            fill
+            className={styles.imageObject}
+          />
+        )}
+      </div>
+
+      {project.middleImages && project.middleImages.length > 0 && (
+        <section className={styles.middleGallery}>
+          {project.middleImages.map((img, i) => (
+            <div key={i} className={styles.galleryItemWrapper}>
+              <Image
+                src={img}
+                alt={`Detail ${i}`}
+                fill
+                className={styles.imageObject}
+              />
+            </div>
+          ))}
+        </section>
+      )}
+
+      <section className={styles.storySection}>
+        <h2 className={styles.storyTitle}>Explore the Full Story</h2>
+        <div className={styles.gridTwoColumns}>
+          <div>
+            <h3 className={styles.sectionTitle}>Overview</h3>
+            <p className={styles.text}>{project.overview}</p>
+          </div>
+          <div>
+            <h3 className={styles.sectionTitle}>The Challenge</h3>
+            <p className={styles.text}>{project.challenge}</p>
+          </div>
+        </div>
+        <div className={styles.fullWidthText}>
+          <h3 className={styles.sectionTitle}>Solution</h3>
+          <p className={styles.text}>{project.solution}</p>
+        </div>
       </section>
-    )}
 
-    <footer className={styles.footerNav}>
-      {nav.prev ? (
-        <Link href={`/portfolio/${nav.prev.slug}`} className={styles.navLink}>
-          <span className={styles.navLabel}>
-            <ChevronLeft size={16} /> Prev
-          </span>
-          <span className={styles.navProject}>{nav.prev.title}</span>
-        </Link>
-      ) : (
-        <div />
+      {project.bottomImages && project.bottomImages.length > 0 && (
+        <section className={styles.bottomGallery}>
+          {project.bottomImages.map((img, i) => (
+            <div key={i} className={styles.galleryItemWrapper}>
+              <Image
+                src={img}
+                alt={`Gallery ${i}`}
+                fill
+                className={styles.imageObject}
+              />
+            </div>
+          ))}
+        </section>
       )}
 
-      {nav.next ? (
-        <Link
-          href={`/portfolio/${nav.next.slug}`}
-          className={`${styles.navLink} ${styles.alignRight}`}
-        >
-          <span className={styles.navLabel}>
-            Next <ChevronRight size={16} />
-          </span>
-          <span className={styles.navProject}>{nav.next.title}</span>
-        </Link>
-      ) : (
-        <div />
-      )}
-    </footer>
-  </div>
-);
+      <footer className={styles.footerNav}>
+        {nav.prev ? (
+          <Link href={`/portfolio/${nav.prev.slug}`} className={styles.navLink}>
+            <span className={styles.navLabel}>
+              <ChevronLeft size={16} /> Prev
+            </span>
+            <span className={styles.navProject}>{nav.prev.title}</span>
+          </Link>
+        ) : (
+          <div />
+        )}
+
+        {nav.next ? (
+          <Link
+            href={`/portfolio/${nav.next.slug}`}
+            className={`${styles.navLink} ${styles.alignRight}`}
+          >
+            <span className={styles.navLabel}>
+              Next <ChevronRight size={16} />
+            </span>
+            <span className={styles.navProject}>{nav.next.title}</span>
+          </Link>
+        ) : (
+          <div />
+        )}
+      </footer>
+    </div>
+  );
 }

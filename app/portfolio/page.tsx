@@ -61,7 +61,7 @@ const projects: Project[] = [
     id: '6',
     title: 'Quiz Craft',
     category: 'Web-based Game',
-    description: 'Node.js powered quiz application with real-time multiplayer functionality',
+    description: 'Next.js powered quiz application with real-time multiplayer functionality',
     image: '/project-quizcraft.jpg',
     link: '/portfolio/quiz-craft'
 },

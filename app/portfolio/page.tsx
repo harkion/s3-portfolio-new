@@ -46,7 +46,36 @@ const projects: Project[] = [
     description: 'An ADHD friendly web-based reaction game built with HTML, CSS, and JavaScript',
     image: '/project-zonein.jpg',
     link: '/portfolio/zone-in'
+},
+
+{
+    id: '5',
+    title: 'OWOW',
+    category: 'Flipdot Display Tetris',
+    description: 'A flipdot display powered Tetris game',
+    image: '/project-owow.jpg',
+    link: '/portfolio/owow'
+},
+
+{
+    id: '6',
+    title: 'Quiz Craft',
+    category: 'Web-based Game',
+    description: 'Node.js powered quiz application with real-time multiplayer functionality',
+    image: '/project-quizcraft.jpg',
+    link: '/portfolio/quiz-craft'
+},
+
+{
+    id: '7',
+    title: 'GorillaBot',
+    category: 'Discord Bot',
+    description: 'A multifunctional Discord bot offering moderation, reminders, and utility features',
+    image: '/project-gorillabot.jpg',
+    link: '/portfolio/gorillabot'
 }
+
+
   // More projects to come...
 ];
 

@@ -18,6 +18,7 @@ interface ProjectData {
   overview: string;
   challenge: string;
   solution: string;
+  link?: string;
 }
 
 // Project Data
@@ -65,6 +66,7 @@ const projects: Record<string, ProjectData> = {
     year: "2025",
     role: "UI/UX Designer & Developer",
     team: "Fahri Can Genç, Bianka Hadnagy, Cedya Elif Ekiz",
+    link: "https://i556437.hera.fontysict.net/belco/index.html",
     heroImage: "/project-belco-hero.jpg",
     middleImages: ["/project-belco-1.jpg", "/project-belco-2.jpg"], 
     bottomImages: ["/project-belco-3.jpg", "/project-belco-4.jpg"],
@@ -83,6 +85,7 @@ const projects: Record<string, ProjectData> = {
     year: "2025",
     role: "Developer & UI/UX Designer",
     team: "Fahri Can Genç",
+    link: "https://i556437.hera.fontysict.net/zone-in/",
     heroImage: "/project-zonein-hero.jpg",
     middleImages: ["/project-zonein-1.jpg", "/project-zonein-2.jpg"],
     bottomImages: ["/project-zonein-3.jpg", "/project-zonein-4.jpg"],
@@ -92,6 +95,61 @@ const projects: Record<string, ProjectData> = {
       "Initially, I wasn't sure what direction to take. The challenge was to create a focus-based game that would be ADHD friendly, avoiding overstimulation while keeping it engaging. I needed to understand how to design for attention and accessibility.",
     solution:
       "I started with sketches and then moved into Figma to prototype my idea. I prioritized getting into the code and refining the experience iteratively. Key insights included: keeping instructions minimal, using non-overstimulating visuals, and adding keyboard shortcuts. I built the game using dynamic game logic and used localStorage for saving settings.",
+  },
+
+  owow: {
+    slug: "owow",
+    title: "OWOW",
+    category: "Flipdot Display Tetris",
+    year: "2026",
+    role: "UI/UX Designer & Developer",
+    team: "Fahri Can Genç, Jaycey B., Joël V., Louis G., Melanie v.d. G. & Sefa Y.",
+    heroImage: "/project-owow-hero.jpg",
+    middleImages: ["/project-owow-1.jpg", "/project-owow-2.jpg"], 
+    bottomImages: ["/project-owow-3.jpg", "/project-owow-4.jpg"],
+    overview:
+      "-",
+    challenge:
+      "-",
+    solution:
+      "-",
+  },
+
+  "quiz-craft": {
+    slug: "quiz-craft",
+    title: "Quiz Craft",
+    category: "Web-based Game",
+    year: "2026",
+    role: "Developer & UI/UX Designer",
+    team: "Fahri Can Genç",
+    link: "https://quiz-craft-self.vercel.app/",
+    heroImage: "/project-quizcraft-hero.jpg",
+    middleImages: ["/project-quizcraft-1.jpg", "/project-quizcraft-2.jpg"],
+    bottomImages: ["/project-quizcraft-3.jpg", "/project-quizcraft-4.jpg"],
+    overview:
+    "Quiz Craft is a web-based trivia game built with Next.js and Supabase, designed for teenagers and young adults who enjoy fast-paced, competitive gameplay. Players select a category, enter a username, and complete a timed quiz where scores are calculated based on both speed and accuracy. The project focuses on replayability, clear feedback, and a modern, minimal UI that keeps players engaged without overwhelming them.",
+    challenge:
+    "One of the main challenges was balancing speed-based gameplay with accessibility and focus. Designing a game that feels competitive without becoming stressful required careful decisions around timing, feedback, and visual hierarchy. On a technical level, managing time-based logic, handling edge cases when timers expired, and integrating Supabase with Next.js client components added complexity to the development process.",
+    solution:
+    "I approached the project iteratively, starting with rough ideas and quickly moving into prototyping and development. The interface was kept clean and minimal, with the timer and score always visible and immediate feedback shown after each answer. I implemented an asynchronous multiplayer system using shared quiz links and category-based leaderboards, allowing players to compete without real-time synchronization. Using Supabase for data persistence and Next.js for dynamic routing resulted in a scalable foundation that can easily support future features like daily challenges or fixed multiplayer sessions.",
+},
+
+  gorillabot: {
+    slug: "gorillabot",
+    title: "GorillaBot",
+    category: "Discord Bot",
+    year: "2026",
+    role: "Developer & UI/UX Designer",
+    team: "Fahri Can Genç",
+    heroImage: "/project-gorillabot-hero.jpg",
+    middleImages: ["/project-gorillabot-1.jpg", "/project-gorillabot-2.jpg"],
+    bottomImages: ["/project-gorillabot-3.jpg", "/project-gorillabot-4.jpg"],
+    overview:
+      "GorillaBot is a custom-built Discord bot designed to automate reminders, manage scheduled events, and support server organization. The bot focuses on reliability, clarity, and automation, helping Discord communities reduce manual work while staying informed.",
+    challenge:
+      "The main challenge was building a bot that could reliably handle scheduled reminders and background tasks without missing events or causing performance issues. I also had to design a system that was easy to configure, debug, and extend, while running in a Docker-based environment.",
+    solution:
+      "I approached this by building the bot with a modular architecture, separating commands, scheduling logic, and event handling. I implemented structured logging to track bot activity and errors, and used Docker Compose to ensure consistent deployment. By testing each feature incrementally and monitoring logs during live testing, I was able to improve stability, fix edge cases, and create a solid foundation for future features.",
   },
 };
 
@@ -141,6 +199,20 @@ export default async function ProjectPage({
           <span className={styles.metaValue}>{project.team}</span>
         </div>
       </div>
+      {project.link && (
+    <div className={styles.metaRow}>
+      <span className={styles.metaLabel}>Link:</span>
+      <a 
+        href={project.link} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className={styles.metaValue}
+        style={{ textDecoration: 'underline', cursor: 'pointer' }}
+      >
+        Visit Project
+      </a>
+    </div>
+  )}
     </header>
 
     <div className={styles.heroWrapper}>
